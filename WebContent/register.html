@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+	
+	#formdiv{
+		width: 300px;
+	}
+	
+	#registerForm{
+		width: 100%;
+	}
+	
+	
+</style>
+
+</head>
+<body>
+
+<div id="formdiv" class="formdivclass" align="center">
+
+<form action="registerServlet" method="POST" name="registerform" id="registerForm">
+	
+	<input type="text" name="firstname" placeholder="John" required /><br />
+	<input type="text" name="lastname" placeholder="Doe" required /><br />
+	<input type="email" name="email" placeholder="email@domain.com" required /><br />
+	<input type="password" name="passwprd" required /><br />
+	<input type="submit" name="submit" value="submit" /> 
+	<input type="reset" name="reset" value="reset" />
+	
+</form>
+
+</div>
+
+</body>
+</html>

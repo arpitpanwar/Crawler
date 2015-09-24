@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="HW2">
+        <wb-resource deploy-path="/" source-path="/conf"/>
+        <wb-resource deploy-path="/WEB-INF" source-path="/conf/webxml"/>
+        <wb-resource deploy-path="/WEB-INF" source-path="/target"/>
+        <wb-resource deploy-path="/WEB-INF/lib" source-path="/lib"/>
+        <property name="context-root" value="HW2"/>
+        <property name="java-output-path" value="/HW2/target/classes/"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+	
+	#formdiv{
+		width: 300px;
+		margin: auto;
+	}
+	
+	#registerForm{
+		width: 100%;
+	}
+	
+	form#registerForm label{
+		margin: 5px;
+		padding: 5px;
+		text-align: left;
+	}
+	
+	form#registerForm input{
+		margin: 5px;
+		padding: 5px;
+		text-align: left;
+	}
+	
+	#header{
+		height: 50px;
+		margin-top: 10px;
+		text-align: center;
+	}
+	
+	.hiddenmessage{
+		display: none;
+	}
+	
+	.visiblemessage{
+		display: block;
+		height: 50px;
+		margin-top: 10px;
+		text-align: center;
+		color: red;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	
+	window.onload = hashcheck;
+	
+	function hashcheck(){
+		var hash = window.location.hash;
+		
+		if(typeof hash != undefined){
+		
+			if(hash!=""){
+				if(hash === "#error"){
+					var elem = document.getElementById("invalidargs");
+					
+					if(typeof elem !=undefined){
+						elem.className = "visiblemessage";
+					}
+				}
+				
+				if(hash === "#uniqueError"){
+					
+					var elem = document.getElementById("uniqueemail");
+					
+					if(typeof elem !=undefined){
+						elem.className = "visiblemessage";
+					}
+					
+					
+				}
+				
+				if(hash === "#success"){
+					
+					var elem = document.getElementById("success");
+					var div = document.getElementById("formdiv");
+					if(typeof elem !=undefined){
+						elem.className = "visiblemessage";
+						div.className = "hiddenmessage";
+					}
+					
+					
+				}
+			}
+		}
+	}
+	
+</script>
+
+
+</head>
+<body>
+
+<div id="header"  class="header">
+	
+	Register to login to the system.
+
+</div>
+
+<div id="invalidargs" class="hiddenmessage">
+	Invalid arguments provided
+</div>
+<div id="uniqueemail" class="hiddenmessage">
+	Email already in use
+</div>
+<div id="success" class="hiddenmessage">
+	User successfully registered. Proceed to login page
+</div>
+
+<div id="formdiv" class="formdivclass" align="center">
+
+<form action="registerServlet" method="POST" name="registerform" id="registerForm">
+	
+<label for="firstname">First Name</label>	<input type="text" name="firstname" placeholder="John" required /><br />
+<label for="lastname">Last Name</label>	<input type="text" name="lastname" placeholder="Doe" required /><br />
+<label for="email">Email</label>	<input type="email" name="email" placeholder="email@domain.com" required /><br />
+<label for="password">Password</label>	<input type="password" name="password" required /><br />
+	<input type="submit" name="submit" value="Submit" /> 
+	<input type="reset" name="reset" value="Reset" />
+	
+</form>
+
+</div>
+
+</body>
+</html>

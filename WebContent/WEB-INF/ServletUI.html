@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Check XPath</title>
+
+<style>
+	.bodydiv{
+		margin: 30px;
+		
+	}
+	
+	#loginform{
+		margin: 30px;
+		float: left;
+	}
+	
+	#header{
+		height:50px;
+	}
+	
+	form#login{
+		padding: 20px;
+		width: 300px;
+	}
+	
+	form#login input{
+		padding-botton: 20px;
+		line-height: 30px;
+		margin-bottom: 8px;
+		text-align: right;
+		
+	}
+	
+	form#login label{
+		text-align: right;
+		
+	}
+	
+	div#btns input{
+		line-height: 20px;
+		padding-right: 10px;
+		text-align: center;
+		
+	}
+	div#bodycontent {
+		float: right;
+	}
+	
+	.errorhidden{
+		display:none;
+	}
+	
+	.errorvisible{
+		display:block;
+	}
+	
+		
+
+</style>
+
+<script type="text/javascript">
+window.onload = checkerror;
+function checkerror(){
+	hash = window.location.hash;
+	if(hash!=""){
+		if(hash === "#error"){
+			elem = document.getElementById("loginError");
+			elem.className="errorvisible";
+		}
+	}
+}
+</script>
+
+
+</head>
+<body>
+
+<div align="center" id="header">
+<b>Name: Arpit Panwar</b><br />
+<b>PennId: arpanwar@seas.upenn.edu</b><br />
+</div>
+<br /><br />
+
+<div id="body" class="bodydiv">
+	<div id="loginForm" class="logindiv">
+		<div id="loginError" class="errorhidden">
+			<p>Incorrect username and/or password</p>
+		</div>
+		<form action="loginhandler" method="POST" id="login">
+			
+			<label for="username">UserName</label>
+			<input type="email" name="username" id="username" placeholder="example@domain.com" required/><br />
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" required /><br />
+			
+			<div id="btns">	
+				<input type="submit" value="Submit" class="submitbtn"/> <input type="reset" value="Cancel" class="resetbtn" />
+			</div>
+			
+		</form>
+	</div>
+	
+	<div id="bodyContent">
+		
+		<a href="allchannels">View All Channels</a>
+	
+	</div>
+
+
+</div>
+<div align="left">
+	<form action="XPathHandler" method="POST">
+	
+	<label for="xpath">XPath</label>
+	<input type="text" name="xpath" id="xpath" required /><p ><font color="gray">Multiple Separated by ;</font></p><br />
+	
+	<label for="url">URL</label>
+	<input type="text" name="url" id="url" required /><br />
+	<br /><br />
+	<input type="submit" name="submit" value="Submit"/> &nbsp; &nbsp;
+	<input type="reset" name="reset" value="Reset" />
+	
+	</form>
+</div>
+
+</body>
+</html>
